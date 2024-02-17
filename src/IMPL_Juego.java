@@ -7,7 +7,7 @@ public class IMPL_Juego implements IntrfaceJuego{
     private Etapa mazmorra_inicial;
     Random random = new Random();
 
-    public IMPL_Juego(Etapa mazmorraInicial) {
+    public IMPL_Juego() {
         mazmorra_inicial = null ;
     }
 
@@ -71,26 +71,129 @@ public class IMPL_Juego implements IntrfaceJuego{
 
     /**
      * Metodo que creara la mazmorra inicial.
+     * 25% de probabilidad que sea etama de bonificación, el resto es de batalla.
+     * -----------------
+     * Nivel 1:
+     * 45% () ratas
+     * 25% () arañas
+     * 15% () duendes
+     * 10% () esqueletos
+     * 3%  () demonios.
+     * 2%  () Mujeres.
+     *-----------------
+     * Nivel 2:
+     * 36% ratas
+     * 24% arañas
+     * 21% duendes
+     * 10%esqueletos
+     * 5% demonios.
+     * 4% Mujeres.
+     *-----------------
+     * Nivel 3
+     * 20% ratas
+     * 30% arañas
+     * 10% duendes
+     * 20%esqueletos
+     * 15% demonios.
+     * 5% Mujeres.
+     * -----------------
+     * Nivel 4
+     * 20% ratas
+     * 50% arañas
+     * 90% duendes
+     * 70%esqueletos
+     * 40% demonios.
+     * 5% Mujeres.
+     * -----------------
+     * Nivel 5
+     * 5% (0-10) ratas
+     * 10% arañas
+     * 15% duendes
+     * 20%esqueletos
+     * 40% demonios.
+     * 10% Mujeres.
      */
     @Override
     public void inicio_Mazmorra() {
         Etapa primera_Mazmorra;
-        int ramdon_1;
-        int enemigo_1;
-        ramdon_1 = random.nextInt(100);
-        enemigo_1 = random.nextInt()
-        if(ramdon_1> 25){
-            primera_Mazmorra = new Etapa(1);
+        Enemigos[] lista_enemigos_Existente = lista_Enemigos(1);
+        Enemigos[] lista_Enemigos_Mazmorra = new Enemigos[3];
+        double tipo_etapa;
+        double enemigo_1;
+        double enemigo_2;
+        double enemigo_3;
+        tipo_etapa = random.nextDouble();
+        enemigo_1 = random.nextDouble();
+        enemigo_2 = random.nextDouble();
+        enemigo_3 = random.nextDouble();
+        if(tipo_etapa< 0.25){
+
+            //hacer lo mismo pero con el equipo.
+
+            /*
+              else que indica la 3 enemigos de la mazmorra.
+             */
+        }else {
+            if(enemigo_1 < 0.45){
+                lista_Enemigos_Mazmorra[0] = lista_enemigos_Existente[0];
+            }
+            else if (enemigo_1 <0.45+0.25){
+                lista_Enemigos_Mazmorra[0] =lista_enemigos_Existente[1];
+            }
+            else if(enemigo_1<0.45+0.25+0.15){
+                lista_Enemigos_Mazmorra[0]= lista_enemigos_Existente[2];
+            } else if (enemigo_1<0.45+0.25+0.15+0.10) {
+                lista_Enemigos_Mazmorra[0]= lista_enemigos_Existente[3];
+            }
+            else if (enemigo_1<0.45+0.25+0.15+0.10+0.03) {
+                lista_Enemigos_Mazmorra[0]= lista_enemigos_Existente[4];
+            }
+            else {
+                lista_Enemigos_Mazmorra[0]= lista_enemigos_Existente[5];
+            }
+
+
+            if(enemigo_2 < 0.45){
+                lista_Enemigos_Mazmorra[1] = lista_enemigos_Existente[0];
+            }
+            else if (enemigo_2 <0.45+0.25){
+                lista_Enemigos_Mazmorra[1] =lista_enemigos_Existente[1];
+            }
+            else if(enemigo_2<0.45+0.25+0.15){
+                lista_Enemigos_Mazmorra[1]= lista_enemigos_Existente[2];
+            } else if (enemigo_2<0.45+0.25+0.15+0.10) {
+                lista_Enemigos_Mazmorra[1]= lista_enemigos_Existente[3];
+            }
+            else if (enemigo_2<0.45+0.25+0.15+0.10+0.03) {
+                lista_Enemigos_Mazmorra[1]= lista_enemigos_Existente[4];
+            }
+            else {
+                lista_Enemigos_Mazmorra[1]= lista_enemigos_Existente[5];
+            }
+
+            if(enemigo_3 < 0.45){
+                lista_Enemigos_Mazmorra[2] = lista_enemigos_Existente[0];
+            }
+            else if (enemigo_3 <0.45+0.25){
+                lista_Enemigos_Mazmorra[2] =lista_enemigos_Existente[1];
+            }
+            else if(enemigo_3<0.45+0.25+0.15){
+                lista_Enemigos_Mazmorra[2]= lista_enemigos_Existente[2];
+            } else if (enemigo_3<0.45+0.25+0.15+0.10) {
+                lista_Enemigos_Mazmorra[2]= lista_enemigos_Existente[3];
+            }
+            else if (enemigo_3<0.45+0.25+0.15+0.10+0.03) {
+                lista_Enemigos_Mazmorra[2]= lista_enemigos_Existente[4];
+            }
+            else {
+                lista_Enemigos_Mazmorra[2]= lista_enemigos_Existente[5];
+            }
         }
-
-
-
-
 
     }
 
     /**
-     * Metodo que sirve para avanzar hacia la izquiera en los mazmorra.
+     * Metodo que sirve para avanzar hacia la izquiera en la mazmorra.
      */
     @Override
     public void avanzar_Izquierda() {
@@ -106,9 +209,9 @@ public class IMPL_Juego implements IntrfaceJuego{
     }
 
     /**
-     * Metodo que sirve para crear personaje, este contendra el nombre del personaje, .
+     * Metodo que sirve para crear personaje, este contendra el nombre del personaje.
      *
-     * @return
+     * @return el personaje creado
      */
     @Override
     public Personaje crear_Peronaje() {
@@ -154,7 +257,7 @@ public class IMPL_Juego implements IntrfaceJuego{
                 }
             }
             catch (Exception e){
-                System.out.println("Error Error: Se produjo un error, ingrese nuevamente la opción correta.");
+                System.out.println("Error Error: Se produjo un error, ingrese nuevamente la opción correcta.");
             }
         }
         String nombre_Personaje;
@@ -172,19 +275,20 @@ public class IMPL_Juego implements IntrfaceJuego{
                 continue;
             }
             else{
-                System.out.println("Ingrese una opcion valida, tendra que escrbirlo denuevo.");
+                System.out.println("Ingrese una opción valida, tendrá que escribirlo de nuevo.");
             }
         }
         int tipo_Personaje;
         label:
         while (true){
-            System.out.println("En este mundo existen 4 tipo de personajes.  \n" +
-                    "[1] La clase guerrero \n" +
-                    "[2] La clase Arquero \n" +
-                    "[3] La clase Mago \n " +
-                    "[4] La clase Sanador \n" +
-                    "Cada clase Tiene habilidades y armas unicas, por lo tanto escoja con cuidado \n" +
-                    "Ingrese el numero correspondiente a la clase");
+            System.out.println("""
+                    En este mundo existen 4 tipo de personajes. \s
+                    [1] La clase guerrero\s
+                    [2] La clase Arquero\s
+                    [3] La clase Mago\s
+                     [4] La clase Sanador\s
+                    Cada clase Tiene habilidades y armas unicas, por lo tanto escoja con cuidado\s
+                    Ingrese el numero correspondiente a la clase""");
             String opcion =scanner.next();
             switch (opcion){
                 case ("1"):
@@ -201,7 +305,7 @@ public class IMPL_Juego implements IntrfaceJuego{
                     break label;
                 case null:
                 default:
-                    System.out.println("Iingrese una opcion valida");
+                    System.out.println("Ingrese una opción valida");
                     break;
             }
         }
@@ -209,5 +313,88 @@ public class IMPL_Juego implements IntrfaceJuego{
     return new Personaje(vida,nombre_Personaje,true,false,null,1,tipo_Personaje,null,tipo_Clase,ataque,0);
 
 
+    }
+
+    /**
+     * Metodo que sirve para listar los enemigos que existen.
+     * Los atributos aumentarán de la siguiente forma.
+     * Vida +50
+     * ataque +6
+     * los enemigos serán los siguientes:
+     *
+     * vida: 50
+     * ataque: 6
+     * DUENDES
+     *
+     * vida: 30
+     * ataque: 10
+     * ARAÑAS
+     *
+     * vida: 20
+     * ataque: 4
+     * RATA
+     *
+     * vida: 40
+     * ataque: 12
+     * ESQUELETOS
+     *
+     * vida: 70
+     * ataque: 20
+     * DEMONIOS ()
+     *
+     * vida: 200
+     * ataque: 300
+     * MUJERES
+     *
+     * @param nivel_enemigo, está dado por el nivel de la mazmorra.
+     */
+    @Override
+    public Enemigos[] lista_Enemigos(int nivel_enemigo) {
+        Enemigos[] lista_enemigo_creados = new Enemigos[6];
+        label:
+        switch (nivel_enemigo){
+            case (1):
+                lista_enemigo_creados[0] = new Enemigos(50,6,"Duenede",nivel_enemigo,false,false);
+                lista_enemigo_creados[1] = new Enemigos(30,10,"Araña", nivel_enemigo,false,false);
+                lista_enemigo_creados[2] = new Enemigos(20,4,"Rata", nivel_enemigo,false,false);
+                lista_enemigo_creados[3] = new Enemigos(40,12,"Esqueleto", nivel_enemigo,false,false);
+                lista_enemigo_creados[4] = new Enemigos(70,20,"Demonio", nivel_enemigo,false,false);
+                lista_enemigo_creados[5] = new Enemigos(200,300,"Mujer", nivel_enemigo,false,false);
+                return lista_enemigo_creados;
+            case (2):
+                lista_enemigo_creados[0] = new Enemigos(100,12,"Duenede",nivel_enemigo,false,false);
+                lista_enemigo_creados[1] = new Enemigos(80,16,"Araña", nivel_enemigo,false,false);
+                lista_enemigo_creados[2] = new Enemigos(70,10,"Rata", nivel_enemigo,false,false);
+                lista_enemigo_creados[3] = new Enemigos(90,18,"Esqueleto", nivel_enemigo,false,false);
+                lista_enemigo_creados[4] = new Enemigos(120,26,"Demonio", nivel_enemigo,false,false);
+                lista_enemigo_creados[5] = new Enemigos(250,306,"Mujer", nivel_enemigo,false,false);
+                return lista_enemigo_creados;
+            case (3):
+                lista_enemigo_creados[0] = new Enemigos(150,18,"Duenede",nivel_enemigo,false,false);
+                lista_enemigo_creados[1] = new Enemigos(120,22,"Araña", nivel_enemigo,false,false);
+                lista_enemigo_creados[2] = new Enemigos(110,16,"Rata", nivel_enemigo,false,false);
+                lista_enemigo_creados[3] = new Enemigos(140,24,"Esqueleto", nivel_enemigo,false,false);
+                lista_enemigo_creados[4] = new Enemigos(170,32,"Demonio", nivel_enemigo,false,false);
+                lista_enemigo_creados[5] = new Enemigos(300,312,"Mujer", nivel_enemigo,false,false);
+                return lista_enemigo_creados;
+            case (4):
+                lista_enemigo_creados[0] = new Enemigos(200,24,"Duenede",nivel_enemigo,false,false);
+                lista_enemigo_creados[1] = new Enemigos(170,28,"Araña", nivel_enemigo,false,false);
+                lista_enemigo_creados[2] = new Enemigos(160,22,"Rata", nivel_enemigo,false,false);
+                lista_enemigo_creados[3] = new Enemigos(200,30,"Esqueleto", nivel_enemigo,false,false);
+                lista_enemigo_creados[4] = new Enemigos(220,38,"Demonio", nivel_enemigo,false,false);
+                lista_enemigo_creados[5] = new Enemigos(350,318,"Mujer", nivel_enemigo,false,false);
+                return lista_enemigo_creados;
+            case(5):
+                lista_enemigo_creados[0] = new Enemigos(250,30,"Duenede",nivel_enemigo,false,false);
+                lista_enemigo_creados[1] = new Enemigos(220,34,"Araña", nivel_enemigo,false,false);
+                lista_enemigo_creados[2] = new Enemigos(210,28,"Rata", nivel_enemigo,false,false);
+                lista_enemigo_creados[3] = new Enemigos(250,36,"Esqueleto", nivel_enemigo,false,false);
+                lista_enemigo_creados[4] = new Enemigos(270,44,"Demonio", nivel_enemigo,false,false);
+                lista_enemigo_creados[5] = new Enemigos(400,324,"Mujer", nivel_enemigo,false,false);
+                return lista_enemigo_creados;
+        }
+
+        return null;
     }
 }

@@ -1,11 +1,11 @@
 
 public class Personaje {
     /**
-     * Atributo de vida del personaje, este constara con:
-     * 150 de vida principal si es de clase humano,
+     * Atributo de vida del personaje, este constará con:
+     * 150 de vida principal si es de clase humana,
      * 100 si es un elfo,
-     * 175 si es un enano,
-     * y 200 si es un Troll.
+     * 175 si es un enano(Kevin),
+     * y 200 si es un Troll(Roberth).
      */
     private double vida;
     /**
@@ -55,10 +55,10 @@ public class Personaje {
     private Armadura[] armadura;
     /**
      * Atributo que identificara el daño del personaje, el daño base de los personajes depende de la elección de la clase
-     * para los humanoos, el daño es de 8,
+     * para los humanos, el daño es de 8,
      * para los elfos el daño es de 10,
      * para los enanos el daño es de 7,
-     * para los Troll el dalo es de 6.
+     * para los Troll el daño es de 6.
      */
     private int ataque;
 

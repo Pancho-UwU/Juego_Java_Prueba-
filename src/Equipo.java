@@ -21,7 +21,7 @@ public class Equipo {
     /**
      * Atributo que indica la rareza, esta constara de 6 tipos
      * numero 1, arma normal,
-     * numero 2, arama poco normal,
+     * numero 2, arma poco normal,
      * número 3, arma rara,
      * número 4, arma única,
      * número 5, arma legendaria,

@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 public class Etapa {
     /**
      * Variable que representa si es una etapa de pelea o de loot.
@@ -33,8 +34,12 @@ public class Etapa {
      * Variable que representa si el jugador esta en ella.
      */
     private boolean estan_Jugando;
+    /**
+     * Lista que guarda la cantidad de enemigos que hay.
+     */
+    private  ArrayList<Enemigos> lista_Enemigos;
 
-    public Etapa(int tipo_etapa, int nivel_etapa, int cantidad_Enemigos,Etapa etapa_Siguiente_derecha, Etapa etapa_Siguiente_Izquierda, Etapa atras, boolean estan_Jugando) {
+    public Etapa(int tipo_etapa, int nivel_etapa, int cantidad_Enemigos,Etapa etapa_Siguiente_derecha, Etapa etapa_Siguiente_Izquierda, Etapa atras, boolean estan_Jugando, ArrayList<Enemigos> lista_Enemigos) {
         this.tipo_etapa = tipo_etapa;
         this.nivel_etapa = nivel_etapa;
         this.cantidad_Enemigos = cantidad_Enemigos;
@@ -42,6 +47,7 @@ public class Etapa {
         this.etapa_Siguiente_derecha = null;
         this.atras = null;
         this.estan_Jugando = estan_Jugando;
+        this.lista_Enemigos = lista_Enemigos;
     }
 
     public int getTipo_etapa() {
@@ -100,5 +106,13 @@ public class Etapa {
         this.cantidad_Enemigos = cantidad_Enemigos;
 
 
+    }
+
+    public ArrayList<Enemigos> getLista_Enemigos() {
+        return lista_Enemigos;
+    }
+
+    public void setLista_Enemigos(ArrayList<Enemigos> lista_Enemigos) {
+        this.lista_Enemigos = lista_Enemigos;
     }
 }
