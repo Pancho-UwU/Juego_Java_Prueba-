@@ -38,8 +38,12 @@ public class Etapa {
      * Lista que guarda la cantidad de enemigos que hay.
      */
     private  ArrayList<Enemigos> lista_Enemigos;
+    /**
+     * Variable que representa el loot de la etapa;
+     */
+    ArrayList<Equipo> eqipo_etapa;
 
-    public Etapa(int tipo_etapa, int nivel_etapa, int cantidad_Enemigos,Etapa etapa_Siguiente_derecha, Etapa etapa_Siguiente_Izquierda, Etapa atras, boolean estan_Jugando, ArrayList<Enemigos> lista_Enemigos) {
+    public Etapa(int tipo_etapa, int nivel_etapa, int cantidad_Enemigos,Etapa etapa_Siguiente_derecha, Etapa etapa_Siguiente_Izquierda, Etapa atras, boolean estan_Jugando, ArrayList<Enemigos> lista_Enemigos, ArrayList<Equipo> eqipo_etapa) {
         this.tipo_etapa = tipo_etapa;
         this.nivel_etapa = nivel_etapa;
         this.cantidad_Enemigos = cantidad_Enemigos;
@@ -48,6 +52,7 @@ public class Etapa {
         this.atras = null;
         this.estan_Jugando = estan_Jugando;
         this.lista_Enemigos = lista_Enemigos;
+        this.eqipo_etapa = eqipo_etapa;
     }
 
     public int getTipo_etapa() {
@@ -112,7 +117,16 @@ public class Etapa {
         return lista_Enemigos;
     }
 
+    public ArrayList<Equipo> getEqipo_etapa() {
+        return eqipo_etapa;
+    }
+
+    public void setEqipo_etapa(ArrayList<Equipo> eqipo_etapa) {
+        this.eqipo_etapa = eqipo_etapa;
+    }
+
     public void setLista_Enemigos(ArrayList<Enemigos> lista_Enemigos) {
         this.lista_Enemigos = lista_Enemigos;
+
     }
 }

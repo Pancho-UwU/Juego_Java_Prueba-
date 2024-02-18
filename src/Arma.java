@@ -23,8 +23,8 @@ public class Arma extends Equipo{
 
     private int daño;
 
-    public Arma(String nombre, int tipo_equipo, String descripcion,int categoria, int peso, int tipo_Arma, int restriccion,int daño){
-        super(nombre,tipo_Arma,descripcion,peso,categoria);
+    public Arma(String nombre, int tipo_equipo, String descripcion,int categoria,  int tipo_Arma, int restriccion,int daño){
+        super(nombre,tipo_Arma,descripcion,categoria);
         this.tipo_Arma = tipo_Arma;
         this.restriccion = restriccion;
         this.daño = daño;

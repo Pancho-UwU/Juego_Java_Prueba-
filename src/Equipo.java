@@ -14,10 +14,7 @@ public class Equipo {
      * Descripción del equipo.
      */
     private String descripcion;
-    /**
-     * Variable que indicara el peso de los equipos.
-     */
-    private int peso;
+
     /**
      * Atributo que indica la rareza, esta constara de 6 tipos
      * numero 1, arma normal,
@@ -29,11 +26,10 @@ public class Equipo {
      */
     private int categoria;
 
-    public Equipo(String nombre, int tipo_equipo, String descripcion, int peso,int categoria) {
+    public Equipo(String nombre, int tipo_equipo, String descripcion, int categoria) {
         this.nombre = nombre;
         this.tipo_equipo = tipo_equipo;
         this.descripcion = descripcion;
-        this.peso = peso;
         this.categoria =categoria;
 
     }
@@ -62,11 +58,11 @@ public class Equipo {
         this.descripcion = descripcion;
     }
 
-    public int getPeso() {
-        return peso;
+    public int getCategoria() {
+        return categoria;
     }
 
-    public void setPeso(int peso) {
-        this.peso = peso;
+    public void setCategoria(int categoria) {
+        this.categoria = categoria;
     }
 }

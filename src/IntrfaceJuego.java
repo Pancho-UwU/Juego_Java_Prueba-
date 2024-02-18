@@ -1,4 +1,5 @@
 import java.nio.channels.FileChannel;
+import java.util.ArrayList;
 
 
 public interface IntrfaceJuego {
@@ -13,13 +14,13 @@ public interface IntrfaceJuego {
      * Metodo que sirve para guardar las diferentes armas que exiten en el juego
      * @return un listado con las armas que existen
      */
-    Equipo[] Armas();
+    ArrayList<Arma> Armas();
 
     /**
      * Metodo que sirve para jugardar las diferentes armaduras que existen en el juego.
      * @return un listado con las armaduras que existen.
      */
-    Equipo[] Armaduras();
+    ArrayList<Armadura> Armaduras();
 
     /**
      * Metodo que creara la mazmorra inicial.

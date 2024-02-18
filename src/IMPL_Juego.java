@@ -12,7 +12,7 @@ public class IMPL_Juego implements IntrfaceJuego{
     }
 
     /**
-     * Metodo para representar el incio del juego.
+     * Método para representar el inicio del juego.
      */
     @Override
     public void Juego() {
@@ -23,11 +23,12 @@ public class IMPL_Juego implements IntrfaceJuego{
         {
 
             try{
-                System.out.println("Bienvenido al juego MazMOR-Pancho-Test\n " +
-                        "Seleccione una opcion para inciar \n" +
-                        "Deve de indicar el numero seleccionado \n" +
-                        "[1] Iniciar el juego\n " +
-                        "[2] Salir del jeugo");
+                System.out.println("""
+                        Bienvenido al juego MazMOR-Pancho-Test
+                        Seleccione una opción para inciar\s
+                        Debe de indicar el numero seleccionado\s
+                        [1] Iniciar el juego
+                        [2] Salir del juego""");
                 int opcion_a = scanner.nextInt();
 
                 switch (opcion_a) {
@@ -47,26 +48,89 @@ public class IMPL_Juego implements IntrfaceJuego{
     }
 
     /**
-     * Metodo que sirve para guardar las diferentes armas que exiten en el juego
+     * Método que sirve para guardar las diferentes armas que existen en el juego
      *
      * @return un listado con las armas que existen
      */
     @Override
-    public Equipo[] Armas() {
+    public ArrayList<Arma> Armas() {
         ArrayList<Equipo> lista_Equipo = new ArrayList<>();
-        lista_Equipo.add(new Arma("Arco Común",2,"Es la arma más comun del juego, debido a su porducción en masa",1,5,2,1,10));
+        lista_Equipo.add(new Arma("Arco Común",2,"Es la arma más común del juego, debido a su producción en masa",1,5,2,10));
 
-        return new Equipo[0];
+        return null;
     }
 
     /**
-     * Metodo que sirve para jugardar las diferentes armaduras que existen en el juego.
+     * Método que sirve para guardar las diferentes armaduras que existen en el juego.
      *
      * @return un listado con las armaduras que existen.
      */
     @Override
-    public Equipo[] Armaduras() {
-        return new Equipo[0];
+    public ArrayList<Armadura> Armaduras() {
+            ArrayList<Armadura> armaduras_juego = new ArrayList<>();
+            //armaduras normales.
+            armaduras_juego.add(new Armadura("Casco aldeno",1,"Armadura hecha por los aldeanos alrededor del pueblo",1,1,2,3));
+            armaduras_juego.add(new Armadura("Peto aldeno",1,"Armadura hecha por los aldeanos alrededor del pueblo",1,2,2,5));
+            armaduras_juego.add(new Armadura("Pantalones aldeno",1,"Armadura hecha por los aldeanos alrededor del pueblo",1,3,2,4));
+            armaduras_juego.add(new Armadura("Botas aldeno",1,"Armadura hecha por los aldeanos alrededor del pueblo",1,4,2,1));
+            armaduras_juego.add(new Armadura("Casco de la mazmorra inicial",1,"Armadura encontrada en la primera etapa de la mazmorra, si tienes suerte",1,1,2,2));
+            armaduras_juego.add(new Armadura("Peto de la mazmorra inicial",1,"Armadura encontrada en la primera etapa de la mazmorra, si tienes suerte",1,2,2,4));
+            armaduras_juego.add(new Armadura("Pantalones de la mazmorra inicial",1,"Armadura encontrada en la primera etapa de la mazmorra, si tienes suerte",1,3,2,3));
+            armaduras_juego.add(new Armadura("Botas de la mazmorra inicial",1,"Armadura encontrada en la primera etapa de la mazmorra, si tienes suerte",1,4,2,1));
+            armaduras_juego.add(new Armadura("Casco del novato.",1,"Ideal para aprendices y recién llegados al mundo de la aventura, este set ofrece una combinación básica de cuero y metal para una protección modesta.",1,1,3,5));
+            armaduras_juego.add(new Armadura("Peto del novato.",1,"Ideal para aprendices y recién llegados al mundo de la aventura, este set ofrece una combinación básica de cuero y metal para una protección modesta.",1,1,3,5));
+            armaduras_juego.add(new Armadura("Pantalones del novato.",1,"Ideal para aprendices y recién llegados al mundo de la aventura, este set ofrece una combinación básica de cuero y metal para una protección modesta.",1,1,3,5));
+            armaduras_juego.add(new Armadura("Botas del novato.",1,"Ideal para aprendices y recién llegados al mundo de la aventura, este set ofrece una combinación básica de cuero y metal para una protección modesta.",1,1,3,5));
+            //armaduras poco normales.
+            armaduras_juego.add(new Armadura("Armadura de Alba",1,"Una armadura básica con placas de metal ligero, confeccionada por los artesanos locales. Su diseño sencillo ofrece protección decente para aventureros novatos.",2,1,1,7));
+            armaduras_juego.add(new Armadura("Armadura de Alba",1,"Una armadura básica con placas de metal ligero, confeccionada por los artesanos locales. Su diseño sencillo ofrece protección decente para aventureros novatos.",2,2,1,13));
+            armaduras_juego.add(new Armadura("Armadura de Alba",1,"Una armadura básica con placas de metal ligero, confeccionada por los artesanos locales. Su diseño sencillo ofrece protección decente para aventureros novatos.",2,3,1,6));
+            armaduras_juego.add(new Armadura("Armadura de Alba",1,"Una armadura básica con placas de metal ligero, confeccionada por los artesanos locales. Su diseño sencillo ofrece protección decente para aventureros novatos.",2,4,1,5));
+            armaduras_juego.add(new Armadura("Manto de Hierro",1,"Una armadura simple compuesta principalmente de láminas de hierro, ideal para enfrentarse a amenazas menores. Es la elección común para los primeros enfrentamientos.",2,1,2,20));
+            armaduras_juego.add(new Armadura("Manto de Hierro",1,"Una armadura simple compuesta principalmente de láminas de hierro, ideal para enfrentarse a amenazas menores. Es la elección común para los primeros enfrentamientos.",2,2,2,24));
+            armaduras_juego.add(new Armadura("Manto de Hierro",1,"Una armadura simple compuesta principalmente de láminas de hierro, ideal para enfrentarse a amenazas menores. Es la elección común para los primeros enfrentamientos.",2,3,2,16));
+            armaduras_juego.add(new Armadura("Manto de Hierro",1,"Una armadura simple compuesta principalmente de láminas de hierro, ideal para enfrentarse a amenazas menores. Es la elección común para los primeros enfrentamientos.",2,4,2,10));
+            armaduras_juego.add(new Armadura("Guardia Ligera,",1,"Este conjunto de armaduras, común en las ciudades fronterizas, está diseñado para los guardianes locales. Ofrece una protección esencial para enfrentar los desafíos cotidianos.",2,1,3,13));
+            armaduras_juego.add(new Armadura("Guardia Ligera,",1,"Este conjunto de armaduras, común en las ciudades fronterizas, está diseñado para los guardianes locales. Ofrece una protección esencial para enfrentar los desafíos cotidianos.",2,2,3,13));
+            armaduras_juego.add(new Armadura("Guardia Ligera,",1,"Este conjunto de armaduras, común en las ciudades fronterizas, está diseñado para los guardianes locales. Ofrece una protección esencial para enfrentar los desafíos cotidianos.",2,3,3,13));
+            armaduras_juego.add(new Armadura("Guardia Ligera,",1,"Este conjunto de armaduras, común en las ciudades fronterizas, está diseñado para los guardianes locales. Ofrece una protección esencial para enfrentar los desafíos cotidianos.",2,4,3,13));
+            //armaduras rara.
+            armaduras_juego.add(new Armadura("Set del Errante Nocturno",1,"Compuesto por cuero tratado y adornado con gemas oscuras, este set proporciona una protección superior sin sacrificar la movilidad en la oscuridad.",3,1,2,23));
+            armaduras_juego.add(new Armadura("Set del Errante Nocturno",1,"Compuesto por cuero tratado y adornado con gemas oscuras, este set proporciona una protección superior sin sacrificar la movilidad en la oscuridad.",3,2,2,25));
+            armaduras_juego.add(new Armadura("Set del Errante Nocturno",1,"Compuesto por cuero tratado y adornado con gemas oscuras, este set proporciona una protección superior sin sacrificar la movilidad en la oscuridad.",3,3,2,24));
+            armaduras_juego.add(new Armadura("Set del Errante Nocturno",1,"Compuesto por cuero tratado y adornado con gemas oscuras, este set proporciona una protección superior sin sacrificar la movilidad en la oscuridad.",3,4,2,21));
+            armaduras_juego.add(new Armadura("Manto del Eco Estelar",1,"Esta armadura rara, cubierta con cristales resplandecientes, refleja la luz de las estrellas. Su diseño único atrae miradas curiosas y ofrece una defensa excepcional.",3,1,3,23));
+            armaduras_juego.add(new Armadura("Manto del Eco Estelar",1,"Esta armadura rara, cubierta con cristales resplandecientes, refleja la luz de las estrellas. Su diseño único atrae miradas curiosas y ofrece una defensa excepcional.",3,2,3,23));
+            armaduras_juego.add(new Armadura("Manto del Eco Estelar",1,"Esta armadura rara, cubierta con cristales resplandecientes, refleja la luz de las estrellas. Su diseño único atrae miradas curiosas y ofrece una defensa excepcional.",3,3,3,23));
+            armaduras_juego.add(new Armadura("Manto del Eco Estelar",1,"Esta armadura rara, cubierta con cristales resplandecientes, refleja la luz de las estrellas. Su diseño único atrae miradas curiosas y ofrece una defensa excepcional.",3,4,3,23));
+            armaduras_juego.add(new Armadura("Armadura del Alba Silente",1,"Forjada con aleaciones raras, esta armadura emite un suave resplandor en la penumbra, ofreciendo una defensa fiable y un toque de elegancia discreta.",3,1,2,27));
+            armaduras_juego.add(new Armadura("Armadura del Alba Silente",1,"Forjada con aleaciones raras, esta armadura emite un suave resplandor en la penumbra, ofreciendo una defensa fiable y un toque de elegancia discreta.",3,2,2,29));
+            armaduras_juego.add(new Armadura("Armadura del Alba Silente",1,"Forjada con aleaciones raras, esta armadura emite un suave resplandor en la penumbra, ofreciendo una defensa fiable y un toque de elegancia discreta.",3,3,2,28));
+            armaduras_juego.add(new Armadura("Armadura del Alba Silente",1,"Forjada con aleaciones raras, esta armadura emite un suave resplandor en la penumbra, ofreciendo una defensa fiable y un toque de elegancia discreta.",3,4,2,25));
+            //armadura única.
+            armaduras_juego.add(new Armadura("Armadura del Silencio Estelar",1,"Forjada en las forjas celestiales, esta única armadura irradia un aura de silencio y está adornada con constelaciones brillantes.",4,1,2,32));
+            armaduras_juego.add(new Armadura("Armadura del Silencio Estelar",1,"Forjada en las forjas celestiales, esta única armadura irradia un aura de silencio y está adornada con constelaciones brillantes.",4,2,2,35));
+            armaduras_juego.add(new Armadura("Armadura del Silencio Estelar",1,"Forjada en las forjas celestiales, esta única armadura irradia un aura de silencio y está adornada con constelaciones brillantes.",4,3,2,33));
+            armaduras_juego.add(new Armadura("Armadura del Silencio Estelar",1,"Forjada en las forjas celestiales, esta única armadura irradia un aura de silencio y está adornada con constelaciones brillantes.",4,4,2,31));
+            armaduras_juego.add(new Armadura("Set del Ocaso Dorado",1,"Un conjunto único, confeccionado con láminas de oro celestial, que proporciona no solo una defensa excepcional sino también un aura dorada que ilumina la oscuridad.",4,1,1,36));
+            armaduras_juego.add(new Armadura("Set del Ocaso Dorado",1,"Un conjunto único, confeccionado con láminas de oro celestial, que proporciona no solo una defensa excepcional sino también un aura dorada que ilumina la oscuridad.",4,2,1,39));
+            armaduras_juego.add(new Armadura("Set del Ocaso Dorado",1,"Un conjunto único, confeccionado con láminas de oro celestial, que proporciona no solo una defensa excepcional sino también un aura dorada que ilumina la oscuridad.",4,3,1,38));
+            armaduras_juego.add(new Armadura("Set del Ocaso Dorado",1,"Un conjunto único, confeccionado con láminas de oro celestial, que proporciona no solo una defensa excepcional sino también un aura dorada que ilumina la oscuridad.",4,4,1,35));
+            //armadura legendaria.
+            armaduras_juego.add(new Armadura("Armadura del Éxodo Eterno",1,"Una legendaria armadura forjada con metales ancestrales y encantada con la esencia de los viajes interdimensionales.",5,1,3,43));
+            armaduras_juego.add(new Armadura("Armadura del Éxodo Eterno",1,"Una legendaria armadura forjada con metales ancestrales y encantada con la esencia de los viajes interdimensionales.",5,2,3,45));
+            armaduras_juego.add(new Armadura("Armadura del Éxodo Eterno",1,"Una legendaria armadura forjada con metales ancestrales y encantada con la esencia de los viajes interdimensionales.",5,3,3,44));
+            armaduras_juego.add(new Armadura("Armadura del Éxodo Eterno",1,"Una legendaria armadura forjada con metales ancestrales y encantada con la esencia de los viajes interdimensionales.",5,4,3,41));
+            armaduras_juego.add(new Armadura("Set del Alba Divina",1,"Este conjunto legendario, con incrustaciones de diamantes estelares, resplandece con la luz divina y otorga al portador una protección insuperable.",5,1,3,44));
+            armaduras_juego.add(new Armadura("Set del Alba Divina",1,"Este conjunto legendario, con incrustaciones de diamantes estelares, resplandece con la luz divina y otorga al portador una protección insuperable.",5,2,3,47));
+            armaduras_juego.add(new Armadura("Set del Alba Divina",1,"Este conjunto legendario, con incrustaciones de diamantes estelares, resplandece con la luz divina y otorga al portador una protección insuperable.",5,3,3,41));
+            armaduras_juego.add(new Armadura("Set del Alba Divina",1,"Este conjunto legendario, con incrustaciones de diamantes estelares, resplandece con la luz divina y otorga al portador una protección insuperable.",5,4,3,42));
+            //armadura mítica
+            armaduras_juego.add(new Armadura("Set de la Égida Primordial",1,"Este conjunto mítico, confeccionado con fragmentos de la primera barrera que protegió el universo, brinda una defensa absoluta. Cada pieza está imbuida con la esencia de los titanes primordiales, permitiendo al portador resistir incluso los ataques más devastadores y alterar la realidad misma en su beneficio.",1,1,3,60));
+            armaduras_juego.add(new Armadura("Set de la Égida Primordial",1,"Este conjunto mítico, confeccionado con fragmentos de la primera barrera que protegió el universo, brinda una defensa absoluta. Cada pieza está imbuida con la esencia de los titanes primordiales, permitiendo al portador resistir incluso los ataques más devastadores y alterar la realidad misma en su beneficio.",1,2,3,60));
+            armaduras_juego.add(new Armadura("Set de la Égida Primordial",1,"Este conjunto mítico, confeccionado con fragmentos de la primera barrera que protegió el universo, brinda una defensa absoluta. Cada pieza está imbuida con la esencia de los titanes primordiales, permitiendo al portador resistir incluso los ataques más devastadores y alterar la realidad misma en su beneficio.",1,3,3,60));
+            armaduras_juego.add(new Armadura("Set de la Égida Primordial",1,"Este conjunto mítico, confeccionado con fragmentos de la primera barrera que protegió el universo, brinda una defensa absoluta. Cada pieza está imbuida con la esencia de los titanes primordiales, permitiendo al portador resistir incluso los ataques más devastadores y alterar la realidad misma en su beneficio.",1,4,3,60));
+        return armaduras_juego;
     }
 
     /**
@@ -74,6 +138,7 @@ public class IMPL_Juego implements IntrfaceJuego{
      * 25% de probabilidad que sea etama de bonificación, el resto es de batalla.
      * -----------------
      * Nivel 1:
+     * -----------------
      * 45% () ratas
      * 25% () arañas
      * 15% () duendes
@@ -82,6 +147,7 @@ public class IMPL_Juego implements IntrfaceJuego{
      * 2%  () Mujeres.
      *-----------------
      * Nivel 2:
+     * -----------------
      * 36% ratas
      * 24% arañas
      * 21% duendes
@@ -90,6 +156,7 @@ public class IMPL_Juego implements IntrfaceJuego{
      * 4% Mujeres.
      *-----------------
      * Nivel 3
+     * -----------------
      * 20% ratas
      * 30% arañas
      * 10% duendes
@@ -98,6 +165,7 @@ public class IMPL_Juego implements IntrfaceJuego{
      * 5% Mujeres.
      * -----------------
      * Nivel 4
+     * -----------------
      * 20% ratas
      * 50% arañas
      * 90% duendes
@@ -106,29 +174,205 @@ public class IMPL_Juego implements IntrfaceJuego{
      * 5% Mujeres.
      * -----------------
      * Nivel 5
+     * -----------------
      * 5% (0-10) ratas
      * 10% arañas
      * 15% duendes
      * 20%esqueletos
      * 40% demonios.
      * 10% Mujeres.
+     * -----------------
+     * Porcentajes de aparición de las armaduras.
+     * Nivel 1:
+     * -----------------
+     * Normal: 50%.
+     * Poco normal: 30%.
+     * Rara: 10%.
+     * Única: 7%.
+     * Legendaria: 2%.
+     * Mítica: 1%
+     * -----------------
+     * Nivel 2:
+     * -----------------
+     * Normal: 30%.
+     * Poco normal: 40%.
+     * Rara: 15%.
+     * Única: 10%.
+     * Legendaria: 3%.
+     * Mítica: 2%
+     * -----------------
+     * Nivel 3:
+     * -----------------
+     * Normal: 10%.
+     * Poco normal: 40%.
+     * Rara: 25%.
+     * Única: 15%.
+     * Legendaria: 7%.
+     * Mítica: 3%
+     * -----------------
+     * Nivel 4:
+     * -----------------
+     * Normal: 5%.
+     * Poco normal: 15%.
+     * Rara: 40%.
+     * Única: 20%.
+     * Legendaria: 15%.
+     * Mítica: 5%
+     * -----------------
+     * Nivel 5:
+     * -----------------
+     * Normal: 1%.
+     * Poco normal: 10%.
+     * Rara: 19%.
+     * Única: 30%.
+     * Legendaria: 28%.
+     * Mítica: 12%.
+     * -----------------
+     * Para el tipo de armadura serán los siguientes.
+     * Nivel 1 al 3.
+     * -----------------
+     * Tipo 1: 40%.
+     * Tipo 2: 40%.
+     * Tipo 3: 10%
+     * -----------------
+     * para el resto de 50%
      */
+
     @Override
     public void inicio_Mazmorra() {
         Etapa primera_Mazmorra;
+        ArrayList<Armadura> armaduras_existente = Armaduras();
+        ArrayList<Equipo> equipos_Etapa =new ArrayList<>();
         Enemigos[] lista_enemigos_Existente = lista_Enemigos(1);
         Enemigos[] lista_Enemigos_Mazmorra = new Enemigos[3];
         double tipo_etapa;
         double enemigo_1;
         double enemigo_2;
         double enemigo_3;
+        double armadura;
+        double armadura_categoria;
+
+
         tipo_etapa = random.nextDouble();
         enemigo_1 = random.nextDouble();
         enemigo_2 = random.nextDouble();
         enemigo_3 = random.nextDouble();
+        armadura = random.nextDouble();
+        armadura_categoria = random.nextDouble();
+
+
         if(tipo_etapa< 0.25){
 
-            //hacer lo mismo pero con el equipo.
+            //if que indica el ratio de aparición de las categorías.
+            if(armadura<0.5){
+                if(armadura_categoria<0.4){
+                    for (int i =0; i<= armaduras_existente.size();i++){
+                        if (armaduras_existente.get(i).getTipo_armadura() ==1 && armaduras_existente.get(i).getCategoria() == 1){
+                            equipos_Etapa.add(armaduras_existente.get(i));
+                        }
+                    }
+                } else if (armadura_categoria<0.4+0.4) {
+                    for (int i =0; i<= armaduras_existente.size();i++){
+                        if (armaduras_existente.get(i).getTipo_armadura() ==2 && armaduras_existente.get(i).getCategoria() == 1){
+                            equipos_Etapa.add(armaduras_existente.get(i));
+                        }
+                    }
+                }
+                else {
+                    for (int i =0; i<= armaduras_existente.size();i++){
+                        if (armaduras_existente.get(i).getTipo_armadura() ==3 && armaduras_existente.get(i).getCategoria() == 1){
+                            equipos_Etapa.add(armaduras_existente.get(i));
+                        }
+                    }
+                }
+            }
+            else if (armadura<0.5+0.3) {
+                if(armadura_categoria<0.4){
+                    for (int i =0; i<= armaduras_existente.size();i++){
+                        if (armaduras_existente.get(i).getTipo_armadura() ==1 && armaduras_existente.get(i).getCategoria() == 2){
+                            equipos_Etapa.add(armaduras_existente.get(i));
+                        }
+                    }
+                } else if (armadura_categoria<0.4+0.4) {
+                    for (int i =0; i<= armaduras_existente.size();i++){
+                        if (armaduras_existente.get(i).getTipo_armadura() ==2 && armaduras_existente.get(i).getCategoria() == 2){
+                            equipos_Etapa.add(armaduras_existente.get(i));
+                        }
+                    }
+                }
+                else {
+                    for (int i =0; i<= armaduras_existente.size();i++){
+                        if (armaduras_existente.get(i).getTipo_armadura() ==3 && armaduras_existente.get(i).getCategoria() == 2){
+                            equipos_Etapa.add(armaduras_existente.get(i));
+                        }
+                    }
+                }
+
+            }
+            else if (armadura<0.5+0.3+0.1) {
+                if(armadura_categoria<0.4){
+                    for (int i =0; i<= armaduras_existente.size();i++){
+                        if (armaduras_existente.get(i).getTipo_armadura() ==1 && armaduras_existente.get(i).getCategoria() == 3){
+                            equipos_Etapa.add(armaduras_existente.get(i));
+                        }
+                    }
+                } else if (armadura_categoria<0.4+0.4) {
+                    for (int i =0; i<= armaduras_existente.size();i++){
+                        if (armaduras_existente.get(i).getTipo_armadura() ==2 && armaduras_existente.get(i).getCategoria() == 3){
+                            equipos_Etapa.add(armaduras_existente.get(i));
+                        }
+                    }
+                }
+                else {
+                    for (int i =0; i<= armaduras_existente.size();i++){
+                        if (armaduras_existente.get(i).getTipo_armadura() ==3 && armaduras_existente.get(i).getCategoria() == 3){
+                            equipos_Etapa.add(armaduras_existente.get(i));
+                        }
+                    }
+                }
+            }
+            else if (armadura<0.5+0.3+0.1+0.07) {
+                if(armadura_categoria<0.5){
+                    for (int i = 0; i<= armaduras_existente.size();i++){
+                        if ((armaduras_existente.get(i).getCategoria()==4 && armaduras_existente.get(i).getTipo_armadura()==1)){
+                            equipos_Etapa.add(armaduras_existente.get(i));
+                        }
+                    }
+                }
+                else {
+                    for (int i = 0; i<= armaduras_existente.size();i++){
+                        if ((armaduras_existente.get(i).getCategoria()==4 && armaduras_existente.get(i).getTipo_armadura()==2)){
+                            equipos_Etapa.add(armaduras_existente.get(i));
+                        }
+                    }
+                }
+            }
+            else if (armadura<0.5+0.3+0.1+0.07+0.02) {
+                if(armadura_categoria<0.5){
+                    for (int i = 0; i<= armaduras_existente.size();i++){
+                        if ((armaduras_existente.get(i).getCategoria()==5 && Objects.equals(armaduras_existente.get(i).getNombre(), "Armadura del Éxodo Eterno"))){
+                            equipos_Etapa.add(armaduras_existente.get(i));
+                        }
+                    }
+                }
+                else {
+                    for (int i = 0; i<= armaduras_existente.size();i++){
+                        if ((armaduras_existente.get(i).getCategoria()==5 && Objects.equals(armaduras_existente.get(i).getNombre(), "Set del Alba Divina"))){
+                            equipos_Etapa.add(armaduras_existente.get(i));
+                        }
+                    }
+                }
+
+            }
+            else {
+                for (int i = 0; i<= armaduras_existente.size();i++){
+                    if (armaduras_existente.get(i).getCategoria()==6 ){
+                        equipos_Etapa.add(armaduras_existente.get(i));
+                    }
+                }
+            }
+            // hacer otro if pero con las armas.
+
 
             /*
               else que indica la 3 enemigos de la mazmorra.
@@ -151,7 +395,6 @@ public class IMPL_Juego implements IntrfaceJuego{
             else {
                 lista_Enemigos_Mazmorra[0]= lista_enemigos_Existente[5];
             }
-
 
             if(enemigo_2 < 0.45){
                 lista_Enemigos_Mazmorra[1] = lista_enemigos_Existente[0];
@@ -193,7 +436,7 @@ public class IMPL_Juego implements IntrfaceJuego{
     }
 
     /**
-     * Metodo que sirve para avanzar hacia la izquiera en la mazmorra.
+     * Método que sirve para avanzar hacia la izquierda en la mazmorra.
      */
     @Override
     public void avanzar_Izquierda() {
@@ -201,7 +444,7 @@ public class IMPL_Juego implements IntrfaceJuego{
     }
 
     /**
-     * Metodo que sirve para avanzar hacia la derecha en la mazmorra.
+     * Método que sirve para avanzar hacia la derecha en la mazmorra.
      */
     @Override
     public void avanzar_Derecha() {
@@ -209,7 +452,7 @@ public class IMPL_Juego implements IntrfaceJuego{
     }
 
     /**
-     * Metodo que sirve para crear personaje, este contendra el nombre del personaje.
+     * Método que sirve para crear personaje, este contendrá el nombre del personaje.
      *
      * @return el personaje creado
      */
@@ -221,13 +464,14 @@ public class IMPL_Juego implements IntrfaceJuego{
         label:
         while (true){
             try{
-                System.out.println("Bienvenido al creador de personaje: \n" +
-                        "Se le mostraran las siguientes tipos de personajes \n" +
-                        "Escriba el numero correspondiente del personaje que dese \n" +
-                        "[1] Clase Humano, esta clase tiene 150 de vida y  \n" +
-                        "[2] Clase Elfo \n " +
-                        "[3] Clase Enano \n " +
-                        "[4] Clase Troll");
+                System.out.println("""
+                        Bienvenido al creador de personaje:\s
+                        Se le mostraran las siguientes tipos de personajes\s
+                        Escriba el numero correspondiente del personaje que dese\s
+                        [1] Clase Humano, esta clase tiene 150 de vida y \s
+                        [2] Clase Elfo\s
+                        [3] Clase Enano\s
+                        [4] Clase Troll""");
                 String opcion = scanner.next("Escriba su opción aquí: ");
                 switch (opcion) {
                     case "1":
@@ -266,11 +510,11 @@ public class IMPL_Juego implements IntrfaceJuego{
              nombre_Personaje = scanner.next();
             System.out.println("El nombre de su personaje es " +nombre_Personaje+ " Si desea confirmar este nombre escriba si, no para ingresar un nuevo nombre.");
             String confirmacion = scanner.next().toUpperCase();
-            if (confirmacion == "SI"){
+            if (confirmacion.equals("SI")){
                 System.out.println("Se confirma el nombre del personaje");
                 break;
             }
-            else if (confirmacion == "NO"){
+            else if (confirmacion.equals("NO")){
                 System.out.println("Se volvera a indicar las instrucciones.");
                 continue;
             }
@@ -286,8 +530,8 @@ public class IMPL_Juego implements IntrfaceJuego{
                     [1] La clase guerrero\s
                     [2] La clase Arquero\s
                     [3] La clase Mago\s
-                     [4] La clase Sanador\s
-                    Cada clase Tiene habilidades y armas unicas, por lo tanto escoja con cuidado\s
+                    [4] La clase Sanador\s
+                    Cada clase Tiene habilidades y armas únicas, por lo tanto escoja con cuidado\s
                     Ingrese el numero correspondiente a la clase""");
             String opcion =scanner.next();
             switch (opcion){
